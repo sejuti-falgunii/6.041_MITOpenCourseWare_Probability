@@ -1,2 +1,2 @@
-# 6.041_MITOpenCourseWare_Probability
-Welcome to my Probability and Statistics Learning Journey! This repository serves as a comprehensive resource for anyone interested in exploring the fascinating world of probability and statistics. Happy Learning! 
+# Probability-Statistics
+Welcome to my Probability and Statistics Learning Journey! This repository serves as a comprehensive resource for anyone interested in exploring the fascinating world of probability and statistics. Happy Learning!
