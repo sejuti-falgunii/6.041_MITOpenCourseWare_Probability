@@ -570,9 +570,9 @@ Grounf rules that any legitimate probabilistic model should obey
 It helps us solve problems by figuring out how many ways we can arrange or choose things. This is crucial for understanding probability because many probability problems come down to counting the number of favorable outcomes and the total number of outcomes.
 
 * having a probabilistic experiment with a finite number of outcomes, each equally likely. For example, rolling a fair die 6 times. The number of possible outcomes is calculated by raising the number of choices per roll to the power of the number of rolls:
-$$
+\[
 \text{Total Outcomes} = 6^6
-$$
+\]
 
 This formula works because each roll is independent of the others. So, the total number of outcomes is simply the product of choices for each stage.
 
@@ -581,9 +581,9 @@ This formula works because each roll is independent of the others. So, the total
 having multiple stages in an experiment, where each stage has a number of possible choices, the total number of outcomes is the product of the choices for each stage. 
 
 **Example:** If you’re choosing a dish from a menu with 4 appetizers and 3 main courses, the number of possible meals is:
-$$
+\[
 4 \text{ (appetizers)} \times 3 \text{ (main courses)} = 12
-$$
+\]
 
 ## Permutations:
 
@@ -595,23 +595,23 @@ For each position, you have a choice of books:
 - Third position: 1 choice left
 
  the total number of arrangements is:
-$$
+\[
 3! = 3 \times 2 \times 1 = 6
-$$
+\]
 
 ## Combinations:
 
 When the order doesn’t matter, we use combinations. For example, choosing 2 ice cream flavors from a list of 5. To find the number of ways to choose \(k\) items from \(n\) items, we use the combination formula:
-$$
+\[
 \text{Number of combinations} = \frac{n!}{k! \cdot (n - k)!}
-$$
+\]
 
 ## Counting Subsets
 
 If we have a set with \(n\) elements, the number of possible subsets is:
-$$
+\[
 2^n
-$$
+\]
 
 Why? For each element, we have two choices: include it in a subset or not. So, with \(n\) elements, you have \(2^n\) possible subsets.
 
@@ -619,20 +619,20 @@ Why? For each element, we have two choices: include it in a subset or not. So, w
 
 - **Subsets with Exact Number of Elements:**
   If you want to count subsets of exactly \(k\) elements from \(n\) elements, use the binomial coefficient:
-  $$
+  \[
   \binom{n}{k} = \frac{n!}{k! \cdot (n - k)!}
-  $$
+  \]
 
   **Example:** Choosing 3 people from a group of 10 to form a committee:
-  $$
+  \[
   \binom{10}{3} = \frac{10!}{3! \cdot (10 - 3)!} = 120
-  $$
+  \]
 
 - **Extreme Cases:**
   For \(k = n\), you’re choosing all elements, so there's only one way to do it. Mathematically, this checks out with:
-  $$
+  \[
   \binom{n}{n} = 1
-  $$
+  \]
 
   Similarly, \(\binom{n}{0} = 1\) because there’s exactly one way to choose zero items (the empty set).
 
@@ -649,17 +649,17 @@ A discrete random variable takes on a finite or countable number of possible val
 ## Probability Mass Function (PMF)
 The PMF assigns probabilities to each possible value that a discrete random variable can take; essentially, how likely each numerical outcome is. Example: flipping a coin until we get heads. Here, our random variable \( X \) might represent the number of tosses required to get the first head. If the first toss is a head, \( X = 1 \). If the first toss is a tail and the second is a head, \( X = 2 \). The PMF of \( X \) would then give the probabilities of these different values of \( X \).
 The probability mass function is defined as:
-$$
+\[
 P_X(k) = P(X = k)
-$$
+\]
  \( P_X(k) \) is the probability that the random variable \( X \) taking the value \( k \). The PMF must satisfy two conditions:
 1. **Non-negativity**: \( P_X(k) \geq 0 \) for all \( k \).
 2. **Normalization**: The sum of all probabilities must equal 1, \( \sum P_X(k) = 1 \).
 ## Examples of PMFs
 We flip a fair coin until you get heads for the first time. If the number of tosses required to get the first head can be modeled as a geometric random variable, the PMF of this random variable \( X \) . Here \( X = k \) represents the event that the first head appears on the \( k \)-th toss, is given by:
-$$
+\[
 P_X(k) = (1 - p)^{k-1} p
-$$
+\]
 \( p \) is the probability of getting heads on a single toss.
 
 \( (1 - p)^{k-1} \) represents the probability of getting \( k-1 \) tails before the first head.
@@ -672,18 +672,18 @@ Random variables are essentially functions from the sample space to the real num
 
 ## Expected Value and Variance
 The expected value or mean of a random variable gives a measure of the "center" or "average" value that the random variable takes on. Discrete random variable \( X \) with PMF \( P_X(k) \), the expected value \( E(X) \):
-$$
+\[
 E(X) = \sum_{k} k \cdot P_X(k)
-$$
+\]
 The variance of a random variable, on the other hand, measures the spread or "dispersion" of its possible values. It tells us how much the values of the random variable deviate from the mean. For a discrete random variable \( X \), the variance \( Var(X) \) is defined as:
 
-$$
+\[
 Var(X) = E[(X - E(X))^2] = \sum_{k} (k - E(X))^2 \cdot P_X(k)
-$$
+\]
 ### Understanding Variance
 1. Definition
 Variance is a key statistical concept that measures how much the values of a random variable differ from its average value, or mean.
-$$ \text{Var}(X) = E[(X - E[X])^2] $$
+\[ \text{Var}(X) = E[(X - E[X])^2] \]
 Think of variance as a measure of the spread of your data:
 The example says having test scores that are very close to the average score, the variance will be low. Meaning the scores are not very spread out (consistent).By squaring the differences from the mean, variance gives more weight to larger deviations. So, if some test scores are very high or very low compared to the average, these will contribute more to the variance.
 **2,Calculation:**
@@ -694,13 +694,13 @@ The example says having test scores that are very close to the average score, th
 * By squaring, larger deviations from the mean have a disproportionately larger impact on the variance. This makes variance a useful measure for understanding how spread out or dispersed the values are.
 Variance can also be computed using:
 
-$$ \text{Var}(X) = E[X^2] - (E[X])^2 $$
+\[ \text{Var}(X) = E[X^2] - (E[X])^2 \]
 here
 - **\( E[X^2] \)**= This is the expected value of the square of \( X \). It represents the average of the squared values of the random variable.
 - **\( (E[X])^2 \)**= This is the square of the mean of \( X \).
 expanding the squared deviation formula:
-$$ E[(X - E[X])^2] = E[X^2] - 2E[X]E[X] + (E[X])^2 $$
-$$ \text{Var}(X) = E[X^2] - (E[X])^2 $$
+\[ E[(X - E[X])^2] = E[X^2] - 2E[X]E[X] + (E[X])^2 \]
+\[ \text{Var}(X) = E[X^2] - (E[X])^2 \]
 ### Importance of Variance
 It provides a measure of how consistent or variable the data is. A high variance indicates a lot of variability, meaning the data points are spread out widely around the mean. A low variance indicates that the data points are clustered closely around the mean. Knowing the variance helps in assessing how predictable the data is. Lower variance means more predictability and stability, whereas higher variance suggests greater uncertainty.
 
@@ -720,11 +720,11 @@ This isthe average value you would expect if you could repeat the experiment an 
 
 The **expected value** of a random variable is a weighted average of all possible values, where each value is weighted by its probability. Mathematically, it’s defined as:
 
-$$ E(X) = \sum_{x} x \cdot P(X = x) $$
+\[ E(X) = \sum_{x} x \cdot P(X = x) \]
 
 example: rolling a fair six-sided dice. The possible outcomes are 1 through 6. The expected value is:
 
-$$ E(X) = \frac{1}{6}(1 + 2 + 3 + 4 + 5 + 6) = 3.5 $$
+\[ E(X) = \frac{1}{6}(1 + 2 + 3 + 4 + 5 + 6) = 3.5 \]
 
 if we roll the dice quite a few time, the mean will be near 3.5.
 
@@ -732,7 +732,7 @@ if we roll the dice quite a few time, the mean will be near 3.5.
 
 A random variable's \( X \) function \( g(X) \) is also a random variable. \( X \) represents the roll of a die and \( g(X) \) is the square of \( X \), then \( g(X) \) will be the square of the result of the die roll.
 
-$$ E(g(X)) = \sum_{x} g(x) \cdot P(X = x) $$
+\[ E(g(X)) = \sum_{x} g(x) \cdot P(X = x) \]
 
 shortcut:We can directly use the PMF of \( X \) to compute \( E(g(X)) \).
 
@@ -740,11 +740,11 @@ shortcut:We can directly use the PMF of \( X \) to compute \( E(g(X)) \).
 
 If \( g \) is a linear function, the expectation behaves linearity:
 
-$$ E(aX + b) = aE(X) + b $$ in this way
+\[ E(aX + b) = aE(X) + b \] in this way
 ## Variance and Standard Deviation
 While the expected value gives us a central tendency, it doesn’t tell us how spread out the values are. To do this, we use **variance**. The variance is the average squared distance from the mean:
 
-$$ \text{Var}(X) = E[(X - E(X))^2] $$
+\[ \text{Var}(X) = E[(X - E(X))^2] \]
 
 Variance has units that are the square of the units of \( X \).To get a more interpretable measure of spread, we use the standard deviation, which is the square root of the variance. It’s expressed in the same units as \( X \) and provides a clearer picture of the distribution's spread.
 ## Example1
@@ -754,16 +754,16 @@ We takea simple experiment where the distnce is 200 miles.we can either fly at 2
 - With probability \( \frac{1}{2} \), \( V = 1 \) mph, and the time \( T \) is \( \frac{200}{1} = 200 \) hours.
 
 **Expected Speed**:
-$$ E(V) = \frac{1}{2}(200) + \frac{1}{2}(1) = 100.5 \text{ mph} $$
+\[ E(V) = \frac{1}{2}(200) + \frac{1}{2}(1) = 100.5 \text{ mph} \]
 
 **Variance of Speed**:
-$$ \text{Var}(V) = \frac{1}{2} (200 - 100.5)^2 + \frac{1}{2} (1 - 100.5)^2 \approx 10000 \text{ (mph)}^2 $$
+\[ \text{Var}(V) = \frac{1}{2} (200 - 100.5)^2 + \frac{1}{2} (1 - 100.5)^2 \approx 10000 \text{ (mph)}^2 \]
 
 **Standard Deviation**:
-$$ \text{SD}(V) = \sqrt{10000} = 100 \text{ mph} $$
+\[ \text{SD}(V) = \sqrt{10000} = 100 \text{ mph} \]
 
 **Expected Time**:
-$$ E(T) = \frac{1}{2}(200) + \frac{1}{2}(1) = 100.5 \text{ hours} $$
+\[ E(T) = \frac{1}{2}(200) + \frac{1}{2}(1) = 100.5 \text{ hours} \]
 
 Interestingly, the expected value of the product \( T \times V \) (which is always 200) is not the same as the product of their expected values (which is \( 100.5 \times 100.5 \)).
 
@@ -773,7 +773,7 @@ When we have new information, like knowing that a specific event has occurred, w
 
 The **conditional expectation** of \( X \) given an event \( A \) is:
 
-$$ E(X | A) = \frac{\sum_{x \in A} x \cdot P(X = x | A)}{\sum_{x \in A} P(X = x | A)} $$
+\[ E(X | A) = \frac{\sum_{x \in A} x \cdot P(X = x | A)}{\sum_{x \in A} P(X = x | A)} \]
 
 In the example where \( X \) was initially uniformly distributed, if we know \( X \geq 2 \), we conditionally update our PMF so that the probabilities of 2, 3, and 4 are each \( \frac{1}{3} \). The conditional expectation in this case would be 3.
 # Lecture 7
@@ -933,35 +933,35 @@ So, if \( X \) & \( Y \) are independent, \( g(X) \) & \( h(Y) \) are also indep
 
 ### Expectation
 
-$$
+\[
 E[aX + b] = aE[X] + b \quad \text{(Linearity)}
-$$
+\]
 
-$$
+\[
 E[X + Y] = E[X] + E[Y]
-$$
+\]
 
 For multiple random variables, the expectations still behave linearly.
 
 **If \( X \) & \( Y \) are independent random variables, the product of two random variables has an expectation which is the product of the expectations:**
 
-$$
+\[
 E[X \cdot Y] = E[X] \cdot E[Y]
-$$
+\]
 
 In case we have independences, factoring out the PMFs:
 
-$$
+\[
 E[X \cdot Y] = \sum_{x} \sum_{y} xy P_{X}(x) P_{Y}(y)
-$$
+\]
 
 ---
 
 ### Variance \( (\text{Var}) \)
 
-$$
+\[
 \text{Var}(X) = E[(X - E[X])^2]
-$$
+\]
 
 The random variable we are looking at minus the expected value of the random variable we're looking at. This is the difference of the random variable from its mean. Meaning it's the whole expression's expectation. Variance provides the idea of how spread out the distribution is.
 
@@ -983,19 +983,19 @@ Which counts the number of successes in \( n \) independent trials of a coin. It
 
 - The expected value of \( X_i \) is: \( E[X_i] = np \)
 
-$$
+\[
 \text{Var}(X_i) = np(1-p)
-$$
+\]
 
-$$
+\[
 \text{Var}(X) = np(1-p)
-$$
+\]
 
 - A lot of problems in probability theory get easier by breaking up the random variable of interest into a sum of simpler & more manageable random variables that take values 0 or 1.
 
-$$
+\[
 E[X] = \sum_{k=0}^{n} k \cdot p(k) = np
-$$
+\]
 
 - If we plot the variance of X as a function of p then,
 
@@ -1067,19 +1067,19 @@ The random variable \(X\) happens to take the numerical value \(x\). The probabi
 
 **Expected value of a RV:**
 
-$$
+\[
 E[X] = \sum x P_x(x)
-$$
+\]
 
-$$
+\[
 E[g(x)] = \sum g(x) P_x(x)
-$$
+\]
 
 Here, \(E[g(x)] \neq g(E[X])\) → generally it's not true. It means, we can't reason on average. But there are some exceptions like linearity:
 
-$$
+\[
 E[aX + b] = aE[X] + b
-$$
+\]
 
 Here, \(a\) & \(b\) are some constants.
 E[X_1+X_2] = E[X_1] + E[X_2] \quad \text{if (X_1) \& (X_2) are independent)} 
@@ -1087,38 +1087,38 @@ E[X_1+X_2] = E[X_1] + E[X_2] \quad \text{if (X_1) \& (X_2) are independent)}
 
 The expectation is linear, but it's not true for Variance:
 
-$$
+\[
 Var[aX + b] = a^2 \cdot Var[X]
-$$
+\]
 
 ---
 
 **Side Notes:**
 
-$$
+\[
 E[Var[X]] = E\left[(X - E[X])^2\right] = E\left[X^2 - 2X E[X] + (E[X])^2\right]
-$$
-$$
+\]
+\[
 = E[X^2] - 2E[X]E[X] + (E[X])^2 
-$$
-$$
+\]
+\[
 = E[X^2] - (E[X])^2
-$$
+\]
 
 ---
 
 **Example:**
 
-$$
+\[
 E[X] = 1 \cdot \frac{1}{2} + 2 \cdot \frac{1}{2} = \frac{3}{2}
-$$
+\]
 
-$$
+\[
 Var[X] = \left(1 - \frac{3}{2}\right)^2 \cdot \frac{1}{2} + \left(2 - \frac{3}{2}\right)^2 \cdot \frac{1}{2} 
-$$
-$$
+\]
+\[
 = \frac{1}{4} \cdot \frac{1}{2} + \frac{1}{4} \cdot \frac{1}{2} = \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{4}
-$$
+\]
 # Lecture 8
 ### Continuous Random Variables and Probability Density Functions
 
@@ -1155,15 +1155,15 @@ A simple example of a continuous random variable is the **uniform distribution**
 
 To ensure that the total probability sums to 1, the height of the PDF is set to:
 
-$$
+\[
 \frac{1}{b - a}
-$$
+\]
 
 The expectation of a uniform random variable is the midpoint of the interval, and the variance is:
 
-$$
+\[
 \frac{(b - a)^2}{12}
-$$
+\]
 
 In conclusion, continuous random variables are characterized by the spread of probability across a continuum, and probabilities are calculated using the area under the PDF curve. Properties such as expectation and variance are determined using integrals rather than sums, with the uniform distribution providing a straightforward case.
 In probability theory, probability distributions are categorized into two major types: discrete and continuous.
@@ -1231,18 +1231,18 @@ When calculating the expected value, in the continuous case, we replace sums wit
 
 For two continuous random variables, we introduce the joint density function. This function allows us to compute probabilities for regions of the two-dimensional plane. Given a set \( S \), the probability that the random variables \( (X, Y) \) fall inside \( S \) is determined by integrating the joint density function over that region:
 
-$$
+\[
 P((X, Y) \in S) = \int_S f_{X, Y}(x, y) \, dx \, dy
-$$
+\]
 
 Here, \( f_{X,Y}(x,y) \) represents the joint density function. It is important to note that this joint density function must satisfy two properties: 
 
 1. The joint density must be non-negative: \( f_{X, Y}(x, y) \geq 0 \).
 2. The total probability over the entire space must sum to 1: 
 
-$$
+\[
 \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f_{X,Y}(x,y) \, dx \, dy = 1
-$$
+\]
 
 These properties ensure that the joint density function accurately describes the probabilities of events involving two random variables.
 
@@ -1250,9 +1250,9 @@ These properties ensure that the joint density function accurately describes the
 
 We can think of the joint density function as describing the likelihood of different regions in the plane. A higher value of \( f_{X,Y}(x,y) \) in a specific region indicates that the corresponding values of \( X \) and \( Y \) are more likely to occur. For small regions, we approximate the probability of falling into a small rectangle around \( (x, y) \) as:
 
-$$
+\[
 P((X, Y) \in [x, x+\Delta x] \times [y, y+\Delta y]) \approx f_{X, Y}(x, y) \cdot \Delta x \cdot \Delta y
-$$
+\]
 
 This tells us that the joint density function is essentially the probability per unit area around a particular point.
 
@@ -1260,9 +1260,9 @@ This tells us that the joint density function is essentially the probability per
 
 Once we have the joint density function, we can calculate the expected value of a function of two random variables. Suppose we have a function \( g(X, Y) \), then the expected value of \( g(X, Y) \) is given by:
 
-$$
+\[
 E[g(X, Y)] = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} g(x, y) f_{X, Y}(x, y) \, dx \, dy
-$$
+\]
 
 This formula mirrors the one for the discrete case but replaces sums with integrals and probability mass functions with the joint density function.
 
@@ -1270,9 +1270,9 @@ This formula mirrors the one for the discrete case but replaces sums with integr
 
 Given the joint density function \( f_{X, Y}(x, y) \), we can derive the marginal density for each random variable individually. The marginal density of \( X \) is obtained by integrating out \( Y \):
 
-$$
+\[
 f_X(x) = \int_{-\infty}^{\infty} f_{X, Y}(x, y) \, dy
-$$
+\]
 
 This process of integrating out one of the variables gives us the marginal probability distribution of the remaining variable.
 
@@ -1280,9 +1280,9 @@ This process of integrating out one of the variables gives us the marginal proba
 
 Two continuous random variables \( X \) and \( Y \) are said to be independent if their joint density function factorizes into the product of their marginal densities:
 
-$$
+\[
 f_{X, Y}(x, y) = f_X(x) \cdot f_Y(y)
-$$
+\]
 
 This definition mirrors the one for discrete random variables. Intuitively, independence means that knowing the value of one variable tells you nothing about the other. Additionally, for independent variables, the probability of events involving both variables can be computed by multiplying their individual probabilities.
 
@@ -1321,17 +1321,17 @@ To model the behavior of the needle, we assume it falls completely at random, wi
 
 These assumptions allow us to express the joint density function for \( (x, \theta) \) as the product of the individual densities for \( x \) and \( \theta \). The density of \( x \) is \( \frac{2}{d} \), and the density of \( \theta \) is \( \frac{2}{\pi} \). Hence, the joint density is:
 
-$$
+\[
 f(x, \theta) = \frac{4}{\pi d}
-$$
+\]
 
 #### Step 3: Identifying the Event of Interest
 
 The needle intersects a line if the perpendicular distance from its center to the nearest line is less than half the vertical projection of the needle. Specifically, let the perpendicular projection of the needle's length onto the vertical axis be \( \frac{l}{2} \sin(\theta) \). The condition for intersection is:
 
-$$
+\[
 x \leq \frac{l}{2} \sin(\theta)
-$$
+\]
 
 Thus, the event of interest is described by the inequality \( x \leq \frac{l}{2} \sin(\theta) \).
 
@@ -1339,27 +1339,27 @@ Thus, the event of interest is described by the inequality \( x \leq \frac{l}{2}
 
 To find the probability that the needle intersects a line, we integrate the joint density over the region where \( x \leq \frac{l}{2} \sin(\theta) \). This gives the following double integral:
 
-$$
+\[
 P(\text{intersect}) = \int_0^{\pi/2} \int_0^{\frac{l}{2} \sin(\theta)} \frac{4}{\pi d} \, dx \, d\theta
-$$
+\]
 
 Evaluating the inner integral with respect to \( x \) yields:
 
-$$
+\[
 \int_0^{\frac{l}{2} \sin(\theta)} \frac{4}{\pi d} \, dx = \frac{4l}{\pi d} \sin(\theta)
-$$
+\]
 
 Next, we integrate with respect to \( \theta \):
 
-$$
+\[
 \int_0^{\pi/2} \frac{4l}{\pi d} \sin(\theta) \, d\theta
-$$
+\]
 
 The integral of \( \sin(\theta) \) over \( [0, \pi/2] \) is 1, so the result simplifies to:
 
-$$
+\[
 P(\text{intersect}) = \frac{2l}{\pi d}
-$$
+\]
 
 Thus, the probability that the needle intersects one of the lines is \( \frac{2l}{\pi d} \).
 
@@ -1367,9 +1367,9 @@ Thus, the probability that the needle intersects one of the lines is \( \frac{2l
 
 This formula suggests an interesting method to experimentally estimate the value of \( \pi \). By conducting repeated trials of throwing needles onto the lines and recording the proportion of times the needle intersects a line, one can estimate \( \pi \). Specifically, solving for \( \pi \) gives:
 
-$$
+\[
 \pi = \frac{2l}{Pd}
-$$
+\]
 
 Where \( P \) is the experimentally observed probability of intersection.
 
@@ -1392,9 +1392,9 @@ However, conditioning on an exact value in the continuous case introduces subtle
 
 #### Conditional Density Formula
 To maintain the correct relationship, the conditional density is given by the formula:
-$$
+\[
 f_{X|Y}(x|y) \approx \frac{f_{X,Y}(x, y)}{f_Y(y)}
-$$
+\]
 Here, \( f_{X,Y} \) is the joint density, and \( f_Y(y) \) is the marginal density. This is analogous to how we handle conditional probability in the discrete case, replacing probability mass functions (PMFs) with probability density functions (PDFs).
 
 ### Joint Densities and Slicing
@@ -1404,9 +1404,9 @@ We interpret the conditional density as a "slice" of the joint density. By fixin
 
 #### Independence in Densities
 For independent random variables \( X \) and \( Y \), the joint density factorizes:
-$$
+\[
 f_{X,Y}(x,y) = f_X(x) \cdot f_Y(y)
-$$
+\]
 In this case, the conditional PDF simplifies to the marginal PDF, reinforcing the idea that independence means knowing \( Y \) does not affect our knowledge of \( X \).
 
 ### Example: Breaking a Stick Twice
@@ -1415,34 +1415,34 @@ We are given a stick of length \( l \), and we break it at a random point \( X \
 
 #### Joint Density
 The joint density \( f_{X,Y}(x, y) \) is found by multiplying the marginal density of \( X \) by the conditional density of \( Y \) given \( X \):
-$$
+\[
 f_{X,Y}(x, y) = \frac{1}{l} \cdot \frac{1}{x}, \quad \text{for } 0 \leq y \leq x \leq l
-$$
+\]
 This density is zero elsewhere. The joint PDF exhibits a "sail" shape, which increases as \( x \) decreases, and diverges as \( x \to 0 \).
 
 #### Conditional Expectation of \( Y \) Given \( X \)
 The conditional expectation of \( Y \) given \( X = x \) is:
-$$
+\[
 E[Y|X=x] = \int_0^x y \cdot \frac{1}{x} \, dy = \frac{x}{2}
-$$
+\]
 This result aligns with intuition since \( Y \) is uniformly distributed over \( [0, x] \), and its expected value is the midpoint \( \frac{x}{2} \).
 
 #### Marginal Distribution of \( Y \)
 
 To find the marginal distribution of \( Y \), we integrate out \( X \) from the joint density:
-$$
+\[
 f_Y(y) = \int_y^l \frac{1}{l} \cdot \frac{1}{x} \, dx
-$$
+\]
 This integral gives:
-$$
+\[
 f_Y(y) = \frac{1}{l} \ln \left(\frac{l}{y}\right), \quad 0 \leq y \leq l
-$$
+\]
 This logarithmic shape reflects the higher likelihood of smaller values of \( y \), as the density increases when \( y \to 0 \).
 
 #### Expected Value of \( Y \)
 
 Finally, the expected value of \( Y \) is calculated using the marginal density:
-$$
+\[
 E[Y] = \int_0^l y \cdot \frac{1}{l}
 
 # Lecture 10
@@ -1453,9 +1453,9 @@ E[Y] = \int_0^l y \cdot \frac{1}{l}
 This lecture discusses derived distributions, focusing on the process of deriving the distribution for a function of a known random variable. The topic builds on prior concepts in probability theory and Bayesian inference, connecting discrete and continuous random variables and their respective probability mass functions (PMFs) and probability density functions (PDFs).
 
 1. **Conditional probabilities**: Defined for both PMFs and PDFs, and linked by the general multiplication rule:  
-   $$
+   \[
    P(X, Y) = P(X) \cdot P(Y | X)
-   $$
+   \]
    This is valid for both discrete and continuous random variables, with sums replaced by integrals in the continuous case.
    
 2. **Joint and marginal distributions**: These distributions explain the probability of combinations of values for two or more random variables and how those probabilities marginalize over one variable.
@@ -1466,15 +1466,15 @@ Probability allows us to infer unknown values based on observed measurements. In
 
 Given the prior distribution of \( X \) and a model for \( Y \) given \( X \), the posterior distribution of \( X \) given \( Y \) is obtained using **Bayes' Rule**:
 
-$$
+\[
 P(X | Y) = \frac{P(X) \cdot P(Y | X)}{P(Y)}
-$$
+\]
 
 For continuous variables, this expression translates to:
 
-$$
+\[
 f_{X | Y}(x | y) = \frac{f_X(x) \cdot f_{Y | X}(y | x)}{f_Y(y)}
-$$
+\]
 
 #### Discrete and Continuous Random Variables
 
@@ -1488,9 +1488,9 @@ For example, if \( X \) is binary (0 or 1), and \( Y \) represents a discrete me
 
 In the continuous case, we consider random variables \( X \) and \( Y \) as continuous. The inference process remains similar, except that we work with PDFs instead of PMFs. The posterior distribution is:
 
-$$
+\[
 f_{X | Y}(x | y) = \frac{f_X(x) \cdot f_{Y | X}(y | x)}{f_Y(y)}
-$$
+\]
 
 An application of this might be estimating a continuous signal \( X \), such as current through a resistor, based on a noisy measurement \( Y \).
 
@@ -1503,9 +1503,9 @@ It is possible to have a mixed situation where one variable is discrete (e.g., a
 
 Inference follows the same Bayesian rule, but with a mix of PMF and PDF. The formula is:
 
-$$
+\[
 P(X = x | Y = y) = \frac{P(X = x) \cdot f_{Y | X}(y | x)}{f_Y(y)}
-$$
+\]
 
 #### Example: Noisy Bit Communication
 
@@ -1525,9 +1525,9 @@ Example: Sum of Random Variables
 
 If \( Z = X + Y \), where \( X \) and \( Y \) are independent random variables with known distributions, the PDF of \( Z \) is the **convolution** of the PDFs of \( X \) and \( Y \).
 
-$$
+\[
 f_Z(z) = \int_{-\infty}^{\infty} f_X(x) \cdot f_Y(z - x) \, dx
-$$
+\]
 
 This formula extends to more complex functions of multiple variables.
 
@@ -1541,21 +1541,21 @@ Deriving the Range for \( T \)
 
 The probability event in question involves determining when \( 200/T \) falls within a specific range, namely between 30 and 60. This condition gives us the following inequality:
 
-$$
+\[
 \frac{200}{T} \geq 30 \quad \text{and} \quad \frac{200}{T} \leq 60
-$$
+\]
 
 To solve this inequality for \( T \), we rearrange each part:
 
-$$
+\[
 T \leq \frac{200}{30} \quad \text{and} \quad T \geq \frac{200}{60}
-$$
+\]
 
 Thus, \( T \) must lie within the interval:
 
-$$
+\[
 \frac{200}{60} \leq T \leq \frac{200}{30}
-$$
+\]
 
 For \( T \) values within this range, \( \frac{200}{T} \) satisfies the condition, and we can proceed to find the probability that \( V \) is greater than \( \frac{200}{T} \).
 
@@ -1565,15 +1565,15 @@ Since \( V \) follows a uniform distribution between 0 and 30, the probability t
 
 The probability can be calculated as:
 
-$$
+\[
 P(V > \frac{200}{T}) = \int_{\frac{200}{T}}^{30} \frac{1}{30} \, dv
-$$
+\]
 
 Evaluating this integral gives:
 
-$$
+\[
 P(V > \frac{200}{T}) = \frac{30 - \frac{200}{T}}{30}
-$$
+\]
 
 This formula is valid for \( T \) values within the range derived earlier.
 
@@ -1581,21 +1581,21 @@ This formula is valid for \( T \) values within the range derived earlier.
 
 To find the probability density function (PDF) of \( T \), we take the derivative of the cumulative distribution function (CDF) of \( T \) with respect to \( T \). The CDF is given by:
 
-$$
+\[
 F_T(t) = P(T \leq t) = P(V > \frac{200}{t})
-$$
+\]
 
 The corresponding PDF is the derivative of the CDF:
 
-$$
+\[
 f_T(t) = \frac{d}{dt} \left( \frac{30 - \frac{200}{t}}{30} \right)
-$$
+\]
 
 Applying the chain rule, we obtain:
 
-$$
+\[
 f_T(t) = \frac{200}{30} \cdot \frac{1}{t^2}
-$$
+\]
 
 Thus, the PDF of \( T \) for values within the allowed range \( \left[ \frac{200}{60}, \frac{200}{30} \right] \) is:
 
