@@ -1387,3 +1387,67 @@ Thus, the PDF of \( T \) for values within the allowed range \( \left[ \frac{200
 $$
 f_T(t) = \frac{200}{30} \cdot \frac{1}{t^2}
 $$
+# Flipping A Coin Random Number of times
+A two-stage random process involving:
+
+Rolling a 4-sided fair die (Stage 1)
+Flipping a fair coin N times based on die result (Stage 2)
+
+Process Details
+
+Stage 1: Roll a fair 4-sided die to get N ∈ {0,1,2,3}
+Stage 2: Flip a fair coin N times, count number of heads (K)
+Stage 1: Roll die → Get N = 3
+Stage 2: Flip coin 3 times → HHT → K = 2 headsPart A: PMF of N (Die Roll)
+
+P(N = n) = 1/4 for n ∈ {0,1,2,3}
+P(N = n) = 0 for all other values
+
+Part B: Joint PMF of N and K
+Using conditional probability: P(N=n, K=k) = P(K=k|N=n) × P(N=n)
+Special cases:
+
+When N = 0:
+
+P(K=0|N=0) = 1
+P(K=k|N=0) = 0 for k ≠ 0
+
+
+When N ∈ {1,2,3}:
+
+K follows Binomial(n, 1/2)
+P(N=2, K=1) = P(K=1|N=2) × P(N=2)
+             = (2C1)(1/2)²(1/2) × 1/4
+             = 1/4 × 1/2
+             = 1/8
+Part C: Conditional PMF of K given N=2
+
+Follows Binomial(2, 1/2) distribution
+P(K=k|N=2) = (2Ck)(1/2)² for k ∈ {0,1,2}
+
+Example:
+P(K=1|N=2) = (2C1)(1/2)² = 1/2
+P(K=2|N=2) = (2C2)(1/2)² = 1/4
+P(K=0|N=2) = (2C0)(1/2)² = 1/4
+Part D: Conditional PMF of N given K=2
+Final distribution:
+
+P(N=2|K=2) = 2/5
+P(N=3|K=2) = 3/5
+P(N=n|K=2) = 0 for n ∈ {0,1}
+#  Joint Probability Mass Function (PMF) Drill 1 
+Part A: Conditional Expectation
+Finding values of x that maximize E[Y|X=x]
+For X = 0: E[Y|X=0] = 2     (midpoint of y values 1 and 3)
+For X = 2: E[Y|X=2] = 3/2   (midpoint of y values 1 and 2)
+For X = 4: E[Y|X=4] = 3/2   (average of four y points)
+Result: Maximum occurs at X = 0 with value 2
+Part B: Conditional Variance
+Finding values of y that maximize Var[X|Y=y]
+For Y = 0: Var[X|Y=0] = 0   (only one possible x value)
+For Y = 1: Var[X|Y=1] = 8/3 (x can be 0, 2, or 4)
+For Y = 2: Var[X|Y=2] = 1   (x can be 2 or 4)
+For Y = 3: Var[X|Y=3] = 4   (x can be 0 or 4)
+Result: Maximum occurs at Y = 3 with value 4
+Part C: Minimum Value Distribution
+Analysis of R = min(X,Y)
